@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E97879F9-859A-4F3E-A8F4-AB3922527A47}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightInject</RootNamespace>
+    <AssemblyName>LightInject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Containers\Constructor.cs" />
+    <Compile Include="Containers\Container.cs" />
+    <Compile Include="Containers\IContainer.cs" />
+    <Compile Include="Containers\InjectionConstructor.cs" />
+    <Compile Include="Containers\IServiceLocator.cs" />
+    <Compile Include="Containers\MappingKey.cs" />
+    <Compile Include="Containers\ServiceLocator.cs" />
+    <Compile Include="EventAggregators\BackgroundEventSubscription.cs" />
+    <Compile Include="EventAggregators\DispatcherEventSubscription.cs" />
+    <Compile Include="EventAggregators\Event.cs" />
+    <Compile Include="EventAggregators\EventAggregator.cs" />
+    <Compile Include="EventAggregators\EventSubscription.cs" />
+    <Compile Include="EventAggregators\IEventAggregator.cs" />
+    <Compile Include="EventAggregators\IEventSubscription.cs" />
+    <Compile Include="EventAggregators\PubSubEvent.cs" />
+    <Compile Include="EventAggregators\ThreadOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
